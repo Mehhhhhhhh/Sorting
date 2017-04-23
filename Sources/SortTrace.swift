@@ -27,10 +27,10 @@ extension SortTrace {
     }
   }
 
-  func print_output() -> String {
+  func print_output(with padding: Int) -> String {
     var output = "\(ANSIColors.black.rawValue)\(i)\t\(j)\t"
     for (index, value) in sequence.enumerated() {
-      let value_ = "\(value)".padding(toLength: 2, withPad: " ", startingAt: 0)
+      let value_ = "\(value)".padding(toLength: padding, withPad: " ", startingAt: 0)
       output += "\(ansii_color(i: i, j: j, index: index).rawValue)\(value_)"
     }
     return output

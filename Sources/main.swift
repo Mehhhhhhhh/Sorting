@@ -6,14 +6,15 @@ let insertion_sort = InsertionSort<String>()
 let unfold_sequence = insertion_sort.sort(sample)
 
 //var output = " \t \t\(sample)\n"
+let padding = String(stringInterpolationSegment: sample.count).characters.count+1
 var output = "i\tj\t"
 for i in 0...sample.count-1 {
-  output += "\(i) "
+  output += "\(i)".padding(toLength: padding, withPad: " ", startingAt: 0)
 }
 output += "\n"
 for i in unfold_sequence {
   let trace = SortTrace(i: i.0, j: i.1, sequence: i.2)
-  output += (trace.print_output() + "\n")
+  output += (trace.print_output(with: padding) + "\n")
 }
 
 print(output)
