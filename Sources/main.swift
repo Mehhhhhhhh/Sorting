@@ -10,12 +10,12 @@ import RxSwift
 
 let sample = ["S", "O", "R", "T", "E", "X", "A", "M", "P", "L", "E"]
 
-let selection_sort = SelectionSort(sample)
+let selection_sort = SelectionSort(original: sample)
 let insertion_sort = InsertionSort<String>()
 let unfold_sequence = selection_sort.sort(sample) // insertion_sort.sort(sample)
 let args = ProcessInfo.processInfo.arguments
 
-var min = 7
+var min = (7, sample[7])
 let i = selection_sort.tail(min: &min, head: 7, sequence: sample.slice)
 print(i)
 
