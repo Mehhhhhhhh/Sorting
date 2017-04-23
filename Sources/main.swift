@@ -8,12 +8,16 @@ import RxSwift
 /// sorting --input <<input>> --print <<attributes>> --algorithm <<insertion|selection|h>>
 
 
-
 let sample = ["S", "O", "R", "T", "E", "X", "A", "M", "P", "L", "E"]
+
+let selection_sort = SelectionSort(sample)
 let insertion_sort = InsertionSort<String>()
 let unfold_sequence = insertion_sort.sort(sample)
 let args = ProcessInfo.processInfo.arguments
-print(args)
+
+var min = 7
+let i = selection_sort.tail(min: &min, head: 7, sequence: sample.slice)
+print(i)
 
 var mock_args =
   "--input ThisIsAStringToSort --print trace exchanges compares --algorithm insertion"
