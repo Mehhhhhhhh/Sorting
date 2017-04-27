@@ -34,12 +34,6 @@ struct ShellSort<T: Comparable> {
       let head_tail = sequence(state: (h, 0, seq.slice)) {
         (state: inout (Int, Int, ArraySlice<T>)) -> (Int, Int, ArraySlice<T>)? in
         defer {
-          if state.0 == 1 {
-            let t = state.0
-            print(state.0)
-            print(state.1)
-            print(state.2)
-          }
           let head = state.0
           if head < state.2.count {
             let tail = self.tail(head: head, h: h, sequence: state.2)

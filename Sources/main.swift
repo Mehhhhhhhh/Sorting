@@ -13,7 +13,6 @@ let default_args =
 let args = (ProcessInfo.processInfo.arguments.count == 1
   ? default_args
   : Array(ProcessInfo.processInfo.arguments.dropFirst()))
-print(args)
 
 let sortingIO = SortingIO()
 let args_enum = sortingIO.compile(args)
