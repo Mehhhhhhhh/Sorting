@@ -68,11 +68,11 @@ extension SortingIO {
     (Int, Int, ArraySlice<String>),
     (Int, Int, ArraySlice<String>)>
 
-    if algo == "insertion" {
+    if algo.hasPrefix("insertion") {
       let sorter = InsertionSort(source: input)
       unfold_sequence = sorter.sort(input)
       return sorter.printout(unfold_sequence)
-    } else if algo == "shellsort" {
+    } else if algo.hasPrefix("shell") {
       let sorter = ShellSort(source: input)
       let h_sequence = sorter.h_sequence(input.count)
       var print_out: String = ""
