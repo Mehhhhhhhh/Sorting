@@ -67,22 +67,19 @@ extension SortingIO {
     let unfold_sequence: UnfoldSequence<
     (Int, Int, ArraySlice<String>),
     (Int, Int, ArraySlice<String>)>
-    let printout: (UnfoldSequence<
-    (Int, Int, ArraySlice<String>),
-    (Int, Int, ArraySlice<String>)>) -> String
-
 
     if algo == "insertion" {
       let sorter = InsertionSort(source: input)
       unfold_sequence = sorter.sort(input)
       return sorter.printout(unfold_sequence)
-    } else if algo == "mergesort" {
+    } else if algo == "shellsort" {
       let sorter = ShellSort(source: input)
       let h_sequence = sorter.h_sequence(input.count)
       var print_out: String = ""
       for i in h_sequence {
         let unfold = sorter.sort(input, h: i)
         print_out += sorter.printout(unfold)
+        print_out += "\n"
       }
       return print_out
     } else {
