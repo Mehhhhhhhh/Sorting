@@ -8,7 +8,7 @@ import RxSwift
 /// sorting --input <<input>> --print <<attributes>> --algorithm <<insertion|selection|h>>
 
 let default_args =
-"--input thisisastringtosort --print trace exchanges compares --algorithm insertion"
+"--input thisisastringtosort --print trace exchanges compares --algorithm mergesort"
   .components(separatedBy: " ")
 let args = (ProcessInfo.processInfo.arguments.count == 1
   ? default_args
